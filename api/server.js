@@ -29,4 +29,8 @@ server.use(session(sessionConfig)); // added
 server.use('/api/auth', authRouter);
 server.use('/api/jokes', authenticate, jokesRouter);
 
+server.get("/", (req, res) => {
+    res.status(200).json({ api: "up" });
+});
+
 module.exports = server;
